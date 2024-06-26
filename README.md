@@ -1,94 +1,107 @@
-
-
-```markdown
 # FAMOUS-DDOS
 
-## Kreyòl Ayisyen
+## Introduction
 
-### Deskripsyon
+J'ai créé un script pour effectuer des attaques DDoS à des fins de test, autorisées par les propriétaires des sites cibles. Ce script peut être exécuté via Termux ou à travers un site web que j'ai déployé avec succès : [FAMOUS DDOS](https://famous-ddos.vercel.app/).
 
-FAMOUS-DDOS se yon sript Python ki sèvi ak atak DDoS (Distributed Denial of Service) pou teste securite sit entènèt. Li enpòtan pou itilize sa responsabman epi avèk otorizasyon swadizan.
+---
 
-### Kòman itilize
+## En Creole
 
-1. Klonnen reposytori a sou ou disk ou lokal:
-   
-git clone https://github.com/Azorwolldens/FAMOUS-DDOS.git
-   
+### Enstriksyon
 
-2. Antre nan dosye a:
-      cd FAMOUS-DDOS
-   
+J'ai kreye yon script pou fè atak DDoS pou tès, otorize pa pwopriyetè sit ki vize yo. Script sa a ka egzekite via Termux oswa atravè yon sit entènèt ke mwen te deplwaye avèk siksè: [FAMOUS DDOS](https://famous-ddos.vercel.app/).
 
-3. Ekzekite sript la ak Python, bay non domèn sit ou vle atake ak kantite demann pa segonn ou vle voye:
-   ```bash
-   python3 ddos.py <DOMÈN> <KANTITE_DEMAND_PA_SEGONN>
-   ```
-   Ranplase `<DOMÈN>` ak non domèn sit la (pa egzanp, example.com) ak `<KANTITE_DEMAND_PA_SEGONN>` ak kantite demann pa segonn ou vle voye (pa egzanp, 40000).
+### Itilize via Termux
 
-4. Lè ou fini, peze `Ctrl + C` pou sispann atak la.
-5. si ou fenk ap itilize termux avan fòw fè pkg update && pkg upgrade lè fini ekri pkg install git && pkg install python && pkg install python3
+1. Klone depo a:
+    ```sh
+    git clone https://github.com/Azorwolldens/FAMOUS-DDOS.git
+    cd FAMOUS-DDOS
+    ```
 
-### Avètisman
+2. Enstale depandans:
+    ```sh
+    pip install -r requirements.txt
+    ```
 
-Yo dwe itilize sript la ak responsabilite epi avèk otorizasyon swadizan. Fè atak DDoS san otorizasyon se ilegal ak enetik.
+3. Kouri script la:
+    ```sh
+    python3 ddos.py
+    ```
 
-## Français
+### Itilize atravè sit entènèt la
 
-### Description
+Ale sou sit la [FAMOUS DDOS](https://famous-ddos.vercel.app/) epi swiv enstriksyon yo pou kòmanse yon atak DDoS.
 
-FAMOUS-DDOS est un script Python utilisé pour réaliser des attaques DDoS (Distributed Denial of Service) afin de tester la sécurité des sites web. Il est crucial d'utiliser ce script de manière responsable et avec une autorisation appropriée.
+---
 
-### Utilisation
+## En Français
 
-1. Clonez le repository sur votre machine locale :
-   ```bash
-   git clone https://github.com/Azorwolldens/FAMOUS-DDOS.git
-   ```
+### Instructions
 
-2. Naviguez dans le répertoire du projet :
-   ```bash
-   cd FAMOUS-DDOS
-   ```
+J'ai créé un script pour effectuer des attaques DDoS à des fins de test, autorisées par les propriétaires des sites cibles. Ce script peut être exécuté via Termux ou à travers un site web que j'ai déployé avec succès : [FAMOUS DDOS](https://famous-ddos.vercel.app/).
 
-3. Exécutez le script avec Python, en spécifiant le nom de domaine du site cible et le nombre de requêtes par seconde :
-   ```bash
-   python3 ddos.py <DOMAINE> <REQUÊTES_PAR_SECONDE>
-   ```
-   Remplacez `<DOMAINE>` par le nom de domaine du site cible (par exemple, example.com) et `<REQUÊTES_PAR_SECONDE>` par le nombre de requêtes par seconde que vous souhaitez envoyer (par exemple, 40000).
+### Utilisation via Termux
 
-4. Pour arrêter l'attaque, appuyez sur `Ctrl + C`.
+1. Cloner le dépôt :
+    ```sh
+    git clone https://github.com/Azorwolldens/FAMOUS-DDOS.git
+    cd FAMOUS-DDOS
+    ```
 
-### Avertissement
+2. Installer les dépendances :
+    ```sh
+    pip install -r requirements.txt
+    ```
 
-Utilisez ce script de manière responsable et avec une autorisation appropriée. Effectuer des attaques DDoS sans permission est illégal et contraire à l'éthique.
+3. Lancer le script :
+    ```sh
+    python3 ddos.py
+    ```
 
-## English
+### Utilisation via le site web
 
-### Description
+Allez sur le site [FAMOUS DDOS](https://famous-ddos.vercel.app/) et suivez les instructions pour démarrer une attaque DDoS.
 
-FAMOUS-DDOS is a Python script used for performing DDoS (Distributed Denial of Service) attacks to test website security. It is important to use this script responsibly and with proper authorization.
+---
 
-### How to Use
+## In English
 
-1. Clone the repository to your local machine:
-   ```bash
-   git clone https://github.com/Azorwolldens/FAMOUS-DDOS.git
-   ```
+### Instructions
 
-2. Navigate into the project directory:
-   ```bash
-   cd FAMOUS-DDOS
-   ```
+I have created a script to perform DDoS attacks for testing purposes, authorized by the owners of the targeted sites. This script can be executed via Termux or through a website that I have successfully deployed: [FAMOUS DDOS](https://famous-ddos.vercel.app/).
 
-3. Run the script with Python, specifying the domain name of the target site and the number of requests per second:
-   ```bash
-   python3 ddos.py <DOMAIN> <REQUESTS_PER_SECOND>
-   ```
-   Replace `<DOMAIN>` with the domain name of the target site (e.g., example.com) and `<REQUESTS_PER_SECOND>` with the number of requests per second you wish to send (e.g., 40000).
+### Usage via Termux
 
-4. To stop the attack, press `Ctrl + C`.
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/Azorwolldens/FAMOUS-DDOS.git
+    cd FAMOUS-DDOS
+    ```
 
-### Disclaimer
+2. Install dependencies:
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+3. Run the script:
+    ```sh
+    python3 ddos.py
+    ```
+
+### Usage via the website
+
+Go to the website [FAMOUS DDOS](https://famous-ddos.vercel.app/) and follow the instructions to start a DDoS attack.
+
+---
+
+## Disclaimer
 
 Use this script responsibly and with proper authorization. Performing DDoS attacks without permission is illegal and unethical.
+
+---
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
