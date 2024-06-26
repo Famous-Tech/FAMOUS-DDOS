@@ -17,9 +17,8 @@ git clone https://github.com/Azorwolldens/FAMOUS-DDOS.git
    
 
 2. Antre nan dosye a:
-   ```bash
-   cd FAMOUS-DDOS
-   ```
+      cd FAMOUS-DDOS
+   
 
 3. Ekzekite sript la ak Python, bay non domèn sit ou vle atake ak kantite demann pa segonn ou vle voye:
    ```bash
