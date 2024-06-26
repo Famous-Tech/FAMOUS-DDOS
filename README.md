@@ -12,10 +12,9 @@ FAMOUS-DDOS se yon sript Python ki sèvi ak atak DDoS (Distributed Denial of Ser
 ### Kòman itilize
 
 1. Klonnen reposytori a sou ou disk ou lokal:
-   ```bash
-
+   
 git clone https://github.com/Azorwolldens/FAMOUS-DDOS.git
-   ```
+   
 
 2. Antre nan dosye a:
    ```bash
