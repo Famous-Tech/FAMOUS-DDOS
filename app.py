@@ -12,7 +12,6 @@ def start_attack():
     data = request.json
     domain = data.get('domain')
     rps = data.get('rps')
-    language = data.get('language')
     
     if not domain or not rps:
         return jsonify({'message': 'Domain and Requests per Second are required!'}), 400
