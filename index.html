@@ -4,29 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAMOUS DDOS</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <header>
+        <h1>FAMOUS DDOS</h1>
         <div class="language-selector">
-            <label for="language">Language:</label>
-            <select id="language" onchange="changeLanguage()">
-                <option value="en">English</option>
-                <option value="fr">Français</option>
-                <option value="ht">Kreyòl</option>
-            </select>
+            <button onclick="changeLanguage('en')">EN</button>
+            <button onclick="changeLanguage('fr')">FR</button>
+            <button onclick="changeLanguage('ht')">HT</button>
         </div>
-        <h1 id="title">FAMOUS DDOS</h1>
-        <div class="form-group">
-            <label for="domain" id="domain-label">Domain:</label>
-            <input type="text" id="domain" placeholder="example.com">
-        </div>
-        <div class="form-group">
-            <label for="rps" id="rps-label">Requests Per Second:</label>
-            <input type="number" id="rps" placeholder="40000">
-        </div>
-        <button onclick="startAttack()" id="start-button">Start Attack</button>
-    </div>
+    </header>
+    <main>
+        <section>
+            <h2>DDOS Attack</h2>
+            <input type="text" id="target" placeholder="Enter target URL or IP">
+            <input type="number" id="requests" placeholder="Enter number of requests per second">
+            <button onclick="startAttack()">Start Attack</button>
+            <pre id="result"></pre>
+        </section>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
