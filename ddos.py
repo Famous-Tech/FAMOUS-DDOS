@@ -28,7 +28,7 @@ INFO = [
 
 # Variables globales
 stop_attack = False
-attack_interval = 2  # Intervalle en secondes pour vérifier l'état du serveur
+attack_interval = 5  # Intervalle en secondes pour vérifier l'état du serveur
 
 # Fonction pour effectuer une attaque DDoS sur un domaine
 def attack_domain(domain, port, rate):
@@ -71,13 +71,9 @@ def update_script():
     os.system('git pull')
     print("Script updated successfully.")
 
-# Menu principal
-def main():
+# Fonction pour démarrer l'attaque
+def start_attack():
     global stop_attack
-
-    # Afficher les informations avec effet d'écriture
-    for color, text in INFO:
-        type_effect(text, color=color)
 
     target_type = input("Enter the target type (1 for Domain, 2 for IP Address): ")
     target = input("Enter the target (domain or IP address): ")
@@ -99,6 +95,28 @@ def main():
 
     if not stop_attack:
         print("DDOS attack failed. Press Control + C and try again.")
+
+# Menu principal
+def main():
+    # Afficher les informations avec effet d'écriture
+    for color, text in INFO:
+        type_effect(text, color=color)
+
+    while True:
+        print("\nMenu:")
+        print("1. Update Script")
+        print("2. Start Attack")
+        print("3. Exit")
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            update_script()
+        elif choice == "2":
+            start_attack()
+        elif choice == "3":
+            break
+        else:
+            print("Invalid choice. Please try again.")
 
 if __name__ == "__main__":
     main()
