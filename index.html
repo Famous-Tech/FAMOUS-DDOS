@@ -3,26 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAMOUS DDOS</title>
+    <title>DDOS Attack Interface</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>FAMOUS DDOS</h1>
-        <div class="language-selector">
-            <button onclick="changeLanguage('en')">EN</button>
-            <button onclick="changeLanguage('fr')">FR</button>
-            <button onclick="changeLanguage('ht')">HT</button>
-        </div>
+        <h1>DDOS Attack Interface</h1>
     </header>
     <main>
-        <section>
-            <h2>DDOS Attack</h2>
-            <input type="text" id="target" placeholder="Enter target URL or IP">
-            <input type="number" id="requests" placeholder="Enter number of requests per second">
-            <button onclick="startAttack()">Start Attack</button>
-            <pre id="result"></pre>
-        </section>
+        <form id="attack-form">
+            <label for="target-type">Target Type:</label>
+            <select id="target-type">
+                <option value="1">Domain</option>
+                <option value="2">IP Address</option>
+            </select>
+            
+            <label for="target">Target (Domain or IP):</label>
+            <input type="text" id="target" required>
+            
+            <label for="port">Port:</label>
+            <input type="number" id="port" required>
+            
+            <label for="rate">Rate (requests per second):</label>
+            <input type="number" id="rate" required>
+            
+            <label for="https">Use HTTPS:</label>
+            <input type="checkbox" id="https">
+            
+            <button type="submit">Start Attack</button>
+        </form>
     </main>
     <script src="script.js"></script>
 </body>
