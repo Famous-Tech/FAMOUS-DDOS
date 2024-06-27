@@ -1,54 +1,57 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    background-color: #f4f4f4;
+    color: #333;
     margin: 0;
+    padding: 0;
 }
 
-.container {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+header {
+    background-color: #444;
+    color: white;
+    padding: 10px 0;
     text-align: center;
-    position: relative;
-}
-
-h1 {
-    animation: colorChange 0.3s infinite alternate;
-}
-
-@keyframes colorChange {
-    from { color: black; }
-    to { color: white; }
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input, select {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
 }
 
 .language-selector {
     position: absolute;
     top: 10px;
     right: 10px;
-    display: flex;
-    align-items: center;
 }
 
-.language-selector label {
-    margin-right: 5px;
+button {
+    padding: 5px 10px;
+    margin: 5px;
+    border: none;
+    background-color: #444;
+    color: white;
+    cursor: pointer;
 }
+
+button:hover {
+    background-color: #555;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input, select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+pre {
+    background-color: #f4f4f4
