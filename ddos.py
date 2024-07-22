@@ -19,18 +19,18 @@ def type_effect(text, delay=0.05, color=None):
 
 # Informations sur le script avec couleurs
 INFO = [
-    ("\033[91m", "Script creator: •FAMOUS TECH• OR •FD LORD•\n"),
-    ("\033[91m", "Script design: FD LORD\n"),
+    ("\033[91m", "Script creator: •FAMOUS TECH•\n"),
+    ("\033[91m", "Script design: FAMOUS-TECH \n"),
     ("\033[91m", "Legion: DEDSEC TM\n"),
     ("\033[91m", "Info: USE THIS SCRIPT AT YOUR OWN RISK\n\n"),
     ("\033[94m", "Collaborators:\n"),
-    ("\033[94m", "- Lord____Z\n"),
-    ("\033[93m", "- ×_topher_×\n")
+    ("\033[92m", "- Lord____Z\n"),
+    ("\033[91m", "- ×_topher_×\n")
 ]
 
 # Variables globales
 stop_attack = False
-attack_interval = 5  # Intervalle en secondes pour vérifier l'état du serveur
+attack_interval = 1  # Intervalle en secondes pour vérifier l'état du serveur
 
 # Fonction pour effectuer une attaque DDoS en utilisant des requêtes HTTP
 def attack_http(url, rate):
