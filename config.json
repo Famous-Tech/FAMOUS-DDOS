@@ -1,0 +1,8 @@
+{
+    "server_url": "http://your-flask-app-url.com/log",  // URL HTTP de votre serveur Flask
+    "bot_urls": [
+        "http://bot1-url:8000",
+        "http://bot2-url:8000",
+        "http://bot3-url:8000"
+    ],
+    "default_rate": 10
